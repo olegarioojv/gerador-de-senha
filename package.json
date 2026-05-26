@@ -1,0 +1,47 @@
+{
+  "name": "password-generator",
+  "version": "1.0.0",
+  "description": "Desktop password generator built with HTML, CSS, JavaScript, and Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win nsis",
+    "portable": "electron-builder --dir --config.directories.output=release"
+  },
+  "build": {
+    "appId": "com.passwordgenerator.app",
+    "productName": "Password Generator",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "index.html",
+      "style.css",
+      "script.js",
+      "main.js",
+      "assets/**/*",
+      "vendor/**/*",
+      "package.json"
+    ],
+    "win": {
+      "icon": "assets/app-icon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Password Generator"
+    }
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^26.8.1"
+  },
+  "dependencies": {
+    "lucide": "^1.16.0"
+  }
+}

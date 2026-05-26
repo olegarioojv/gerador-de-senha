@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Senhas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <div class="brand">
+          <div class="brand-icon" aria-hidden="true">
+            <i class="icon" data-lucide="shield-cog"></i>
+          </div>
+          <div>
+            <h1>Gerador de <span>Senhas</span></h1>
+            <p>Crie senhas fortes, seguras e totalmente aleatorias</p>
+          </div>
+        </div>
+
+        <div class="security-badge" aria-label="Status de seguranca">
+          <div class="mini-shield" aria-hidden="true">
+            <i class="icon" data-lucide="shield-check"></i>
+          </div>
+          <div>
+            <strong>Seguranca: <span id="headerStrength">Forte</span></strong>
+            <p>Sua senha nao e armazenada</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="app-grid">
+        <aside class="panel settings-panel" aria-labelledby="settingsTitle">
+          <h2 id="settingsTitle">
+            <i
+              class="section-icon"
+              data-lucide="sliders-horizontal"
+              aria-hidden="true"></i>
+            Personalize sua senha
+          </h2>
+
+          <div class="range-head">
+            <label for="lengthRange">Quantidade de caracteres</label>
+            <output id="lengthValue" for="lengthRange">20</output>
+          </div>
+          <input
+            id="lengthRange"
+            class="range"
+            type="range"
+            min="4"
+            max="64"
+            value="20" />
+          <div class="range-limits" aria-hidden="true">
+            <span>4</span>
+            <span>64</span>
+          </div>
+
+          <div class="prefix-field">
+            <label for="prefixInput">Nome ou prefixo</label>
+            <input
+              id="prefixInput"
+              type="text"
+              placeholder="Ex: Joao Victor"
+              maxlength="40"
+              autocomplete="off" />
+            <small
+              >Opcional: use uma palavra base para criar uma senha
+              memoravel.</small
+            >
+          </div>
+
+          <div class="options" aria-label="Tipos de caracteres">
+            <label class="option-row">
+              <span class="option-mark purple">Aa</span>
+              <span>Letras maiusculas (A-Z)</span>
+              <input class="toggle" id="uppercase" type="checkbox" checked />
+            </label>
+            <label class="option-row">
+              <span class="option-mark blue">aa</span>
+              <span>Letras minusculas (a-z)</span>
+              <input class="toggle" id="lowercase" type="checkbox" checked />
+            </label>
+            <label class="option-row">
+              <span class="option-mark green">123</span>
+              <span>Numeros (0-9)</span>
+              <input class="toggle" id="numbers" type="checkbox" checked />
+            </label>
+            <label class="option-row">
+              <span class="option-mark amber">#@!</span>
+              <span>Caracteres especiais (!@#$%^&*)</span>
+              <input class="toggle" id="symbols" type="checkbox" checked />
+            </label>
+          </div>
+
+          <div class="strength-block">
+            <div class="strength-head">
+              <span
+                >Nivel de seguranca
+                <small
+                  title="A forca considera tamanho e variedade de caracteres."></small
+              ></span>
+              <strong id="strengthLabel">Muito Forte</strong>
+            </div>
+            <div class="strength-meter" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <p id="strengthDescription">
+              Excelente! Sua senha esta muito segura.
+            </p>
+          </div>
+
+          <button class="primary-button" id="generateButton" type="button">
+            <i
+              class="button-icon"
+              data-lucide="sparkles"
+              aria-hidden="true"></i>
+            Gerar Nova Senha
+          </button>
+        </aside>
+
+        <section class="main-stack">
+          <section class="panel password-panel" aria-labelledby="passwordTitle">
+            <div class="panel-head">
+              <h2 id="passwordTitle">Sua senha gerada</h2>
+              <div class="actions">
+                <button class="ghost-button" id="copyButton" type="button">
+                  <i
+                    class="button-icon"
+                    data-lucide="copy"
+                    aria-hidden="true"></i>
+                  <span>Copiar</span>
+                </button>
+                <button
+                  class="ghost-button"
+                  id="quickGenerateButton"
+                  type="button">
+                  <i
+                    class="button-icon"
+                    data-lucide="refresh-cw"
+                    aria-hidden="true"></i>
+                  <span>Gerar outra</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="password-box">
+              <p id="passwordOutput" aria-live="polite"></p>
+              <div class="password-line" aria-hidden="true"><span></span></div>
+            </div>
+
+            <div class="result-message">
+              <div class="result-icon" aria-hidden="true">
+                <i class="icon" data-lucide="shield-check"></i>
+              </div>
+              <div>
+                <p>
+                  Esta senha e considerada
+                  <strong id="messageStrength">muito forte!</strong>
+                </p>
+                <span id="messageDetail"
+                  >Levaria milhares de anos para ser descoberta.</span
+                >
+              </div>
+            </div>
+          </section>
+
+          <section class="panel tips-panel" aria-labelledby="tipsTitle">
+            <h2 id="tipsTitle">Dicas para senhas seguras</h2>
+            <ul>
+              <li>Use pelo menos 12 caracteres</li>
+              <li>Evite informacoes pessoais</li>
+              <li>Combine letras maiusculas e minusculas</li>
+              <li>Nao reutilize senhas</li>
+              <li>Inclua numeros e caracteres especiais</li>
+              <li>Use um gerenciador de senhas</li>
+            </ul>
+          </section>
+        </section>
+      </section>
+
+      <section class="feature-strip" aria-label="Beneficios">
+        <article>
+          <span class="feature-icon purple">
+            <i class="icon" data-lucide="lock"></i>
+          </span>
+          <div>
+            <h3>100% Privado</h3>
+            <p>
+              Suas senhas sao geradas no seu navegador e nao sao armazenadas.
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon green">
+            <i class="icon" data-lucide="zap"></i>
+          </span>
+          <div>
+            <h3>Rapido e Facil</h3>
+            <p>
+              Gere uma senha forte com um clique e copie para usar onde quiser.
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon blue">
+            <i class="icon" data-lucide="shield-check"></i>
+          </span>
+          <div>
+            <h3>Criptograficamente Seguro</h3>
+            <p>
+              Usamos recursos seguros do navegador para gerar senhas aleatorias.
+            </p>
+          </div>
+        </article>
+        <article>
+          <span class="feature-icon amber">
+            <i class="icon" data-lucide="wrench"></i>
+          </span>
+          <div>
+            <h3>Sempre Atualizado</h3>
+            <p>
+              Recomendamos trocar suas senhas regularmente para manter sua
+              seguranca.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <footer>2026 Gerador de Senhas. Todos os direitos reservados.</footer>
+    </main>
+
+    <script src="vendor/lucide.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
