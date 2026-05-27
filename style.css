@@ -810,18 +810,212 @@ footer {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
   .page-shell {
-    width: min(100% - 20px, 640px);
+    width: min(100% - 20px, 900px);
+    min-height: 100vh;
     padding-top: 12px;
   }
 
   .app-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .main-stack {
+    gap: 12px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .security-badge {
+    display: none;
   }
 
   .brand {
     align-items: center;
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 25px;
+  }
+
+  .brand h1 {
+    font-size: 1.45rem;
+  }
+
+  .brand p {
+    margin-top: 2px;
+    font-size: 0.82rem;
+  }
+
+  .panel {
+    padding: 14px;
+  }
+
+  .settings-panel h2,
+  .tips-panel h2,
+  .panel-head h2 {
+    font-size: 1rem;
+  }
+
+  .section-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+  }
+
+  .range-head label,
+  .strength-head span,
+  .strength-head strong {
+    font-size: 0.9rem;
+  }
+
+  .range-head output {
+    min-width: 50px;
+    padding: 6px 9px;
+    font-size: 0.9rem;
+  }
+
+  .range {
+    margin: 8px 0 4px;
+  }
+
+  .range-limits {
+    font-size: 0.8rem;
+  }
+
+  .prefix-field {
+    margin-bottom: 8px;
+  }
+
+  .prefix-field input {
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .options {
+    gap: 6px;
+  }
+
+  .option-row {
+    grid-template-columns: 30px 1fr auto;
+    min-height: 36px;
+    padding: 6px 10px;
+    font-size: 0.84rem;
+  }
+
+  .option-mark {
+    font-size: 0.92rem;
+  }
+
+  .toggle {
+    width: 38px;
+    height: 20px;
+  }
+
+  .toggle::after {
+    width: 14px;
+    height: 14px;
+  }
+
+  .toggle:checked::after {
+    transform: translateX(18px);
+  }
+
+  .strength-block {
+    margin-top: 8px;
+  }
+
+  .strength-meter {
+    margin: 7px 0 10px;
+  }
+
+  .strength-meter span {
+    height: 5px;
+  }
+
+  .primary-button {
+    min-height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .password-panel {
+    padding-bottom: 12px;
+  }
+
+  .panel-head {
+    margin-bottom: 10px;
+  }
+
+  .actions {
+    gap: 8px;
+  }
+
+  .ghost-button {
+    gap: 6px;
+    font-size: 0.86rem;
+  }
+
+  .button-icon {
+    font-size: 1.2rem;
+  }
+
+  .password-box {
+    min-height: 100px;
+    padding: 14px;
+  }
+
+  #passwordOutput {
+    margin-bottom: 10px;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+  }
+
+  .result-message {
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .result-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .result-message p,
+  .result-message span {
+    font-size: 0.82rem;
+  }
+
+  .tips-panel {
+    display: none;
+  }
+
+  .tips-panel ul,
+  .feature-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-strip {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 16px, 640px);
+    padding-top: 10px;
   }
 
   .brand-icon {
@@ -830,31 +1024,38 @@ footer {
     font-size: 24px;
   }
 
+  .brand h1 {
+    font-size: 1.3rem;
+  }
+
+  .brand p {
+    font-size: 0.78rem;
+  }
+
   .panel {
-    padding: 14px;
-  }
-
-  .panel-head {
-    align-items: center;
-    flex-direction: row;
-  }
-
-  .actions {
-    gap: 8px;
-  }
-
-  .tips-panel ul,
-  .feature-strip {
-    grid-template-columns: 1fr;
+    padding: 12px;
   }
 
   .option-row {
-    grid-template-columns: 30px 1fr auto;
-    padding-inline: 10px;
+    font-size: 0.8rem;
+  }
+
+  #passwordOutput {
+    font-size: 1.15rem;
+  }
+
+  .primary-button {
+    min-height: 38px;
+    font-size: 0.85rem;
   }
 
   .result-message {
-    align-items: flex-start;
-    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .result-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.95rem;
   }
 }
