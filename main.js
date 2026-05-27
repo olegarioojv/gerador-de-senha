@@ -8,7 +8,7 @@ function createWindow() {
     minWidth: 1100,
     minHeight: 680,
     backgroundColor: "#050914",
-    title: "Password Generator",
+    title: "Gerador de Senhas",
     autoHideMenuBar: true,
     icon: path.join(__dirname, "assets", "app-icon.png"),
     webPreferences: {

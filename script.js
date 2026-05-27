@@ -197,13 +197,13 @@ function updateStrength(score) {
     },
     {
       label: "Regular",
-      description: "Melhor, mas ainda vale reforcar a variedade.",
+      description: "Melhor, mas ainda vale reforçar a variedade.",
       detail: "Ainda pode ser descoberta com ataques simples.",
       color: "var(--amber)"
     },
     {
       label: "Boa",
-      description: "Boa combinacao para contas comuns.",
+      description: "Boa combinacão para contas comuns.",
       detail: "Levaria mais tempo para ser descoberta.",
       color: "var(--blue)"
     },
@@ -250,7 +250,7 @@ function updateRange() {
 async function copyPassword() {
   const password = elements.passwordOutput.textContent;
 
-  if (!password || password === "Selecione uma opcao") return;
+  if (!password || password === "Selecione uma opção") return;
 
   if (navigator.clipboard && window.isSecureContext) {
     await navigator.clipboard.writeText(password);
