@@ -604,10 +604,14 @@ footer {
 }
 
 @media (max-width: 980px) {
+  .container {
+    overflow-y: auto; /* scroll vertical */
+  }
   .page-shell {
     display: grid;
     grid-template-rows: auto 1fr;
     width: min(100% - 18px, 742px);
+    overflow-y: auto;
     height: 100vh;
     padding: 10px 0;
   }
@@ -809,7 +813,6 @@ footer {
     display: none;
   }
 }
-
 @media (max-width: 1024px) {
   .page-shell {
     width: min(100% - 20px, 900px);
@@ -820,6 +823,7 @@ footer {
   .app-grid {
     grid-template-columns: 1fr;
     gap: 12px;
+    overflow-y: auto;
   }
 
   .main-stack {
@@ -1013,7 +1017,14 @@ footer {
 }
 
 @media (max-width: 640px) {
+  body {
+    overflow-y: auto;
+  }
+
   .page-shell {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
     width: min(100% - 16px, 640px);
     padding-top: 10px;
   }
