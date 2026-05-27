@@ -1,79 +1,181 @@
+/* 
+  :root armazena variáveis globais CSS.
+  Facilita reutilização de cores e manutenção do tema.
+*/
 :root {
+  /* Define que o navegador deve usar tema escuro */
   color-scheme: dark;
+
+  /* Cor principal do fundo */
   --bg: #050914;
+
+  /* Cor de painéis com transparência */
   --panel: rgba(14, 22, 39, 0.84);
+
+  /* Versão mais forte do painel */
   --panel-strong: rgba(17, 26, 46, 0.94);
+
+  /* Cor de bordas suaves */
   --line: rgba(126, 145, 181, 0.18);
+
+  /* Cor de bordas mais fortes */
   --line-strong: rgba(126, 145, 181, 0.28);
+
+  /* Cor principal dos textos */
   --text: #f7f8fb;
+
+  /* Cor secundária dos textos */
   --muted: #aeb6c8;
+
+  /* Cor roxa */
   --purple: #865dff;
+
+  /* Cor azul */
   --blue: #5d9bff;
+
+  /* Cor verde */
   --green: #35e58f;
+
+  /* Cor amarela */
   --amber: #ffbe2e;
+
+  /* Cor vermelha de alerta */
   --danger: #ff647c;
 }
 
+/* 
+  Seleciona todos os elementos.
+  box-sizing: border-box faz padding e borda
+  entrarem no cálculo do tamanho do elemento.
+*/
 * {
   box-sizing: border-box;
 }
 
+/* 
+  Estilização geral do body.
+*/
 body {
+  /* Altura total da tela */
   height: 100vh;
+
+  /* Remove margens padrão */
   margin: 0;
+
+  /* Remove scroll */
   overflow: hidden;
+
+  /* Fonte principal */
   font-family: Inter, "Segoe UI", Arial, sans-serif;
+
+  /* Cor padrão do texto */
   color: var(--text);
+
+  /* Fundo com gradientes */
   background:
+
+    /* Gradiente circular roxo */
     radial-gradient(
       circle at 18% 8%,
       rgba(95, 113, 255, 0.18),
       transparent 30%
     ),
+    /* Gradiente circular verde */
     radial-gradient(
-      circle at 78% 22%,
-      rgba(41, 215, 137, 0.08),
-      transparent 26%
-    ),
+        circle at 78% 22%,
+        rgba(41, 215, 137, 0.08),
+        transparent 26%
+      ),
+    /* Gradiente principal do fundo */
     linear-gradient(135deg, #030712 0%, #07101f 52%, #060a14 100%);
 }
 
+/* 
+  Define que botões e inputs usam a fonte herdada.
+*/
 button,
 input {
   font: inherit;
 }
 
+/* 
+  Configuração padrão dos ícones SVG.
+*/
 .icon,
 .section-icon,
 .button-icon,
 .feature-icon .icon {
+  /* Exibe como bloco */
   display: block;
+
+  /* Largura proporcional */
   width: 1em;
+
+  /* Altura proporcional */
   height: 1em;
+
+  /* Remove preenchimento interno */
   fill: none;
+
+  /* Cor da linha acompanha a cor atual */
   stroke: currentColor;
+
+  /* Espessura da linha */
   stroke-width: 1.8;
+
+  /* Arredonda pontas */
   stroke-linecap: round;
+
+  /* Arredonda junções */
   stroke-linejoin: round;
 }
 
+/* 
+  Container principal da página.
+*/
 .page-shell {
+  /* Layout em grid */
   display: grid;
+
+  /* Divide em duas linhas */
   grid-template-rows: auto 1fr;
+
+  /* Largura máxima */
   width: min(1220px, calc(100% - 40px));
+
+  /* Altura total */
   height: 100vh;
+
+  /* Centraliza horizontalmente */
   margin: 0 auto;
+
+  /* Espaçamento vertical */
   padding: 18px 0;
 }
 
+/* 
+  Área superior da página.
+*/
 .hero {
+  /* Layout flexível */
   display: flex;
+
+  /* Alinha verticalmente */
   align-items: center;
+
+  /* Espaça itens */
   justify-content: space-between;
+
+  /* Espaço entre itens */
   gap: 24px;
+
+  /* Margem inferior */
   margin-bottom: 16px;
 }
 
+/* 
+  Elementos alinhados em flex.
+*/
 .brand,
 .security-badge,
 .panel-head,
@@ -84,22 +186,47 @@ input {
   align-items: center;
 }
 
+/* 
+  Área da marca/logo.
+*/
 .brand {
+  /* Espaçamento entre logo e texto */
   gap: 12px;
 }
 
+/* 
+  Ícone principal da marca.
+*/
 .brand-icon {
+  /* Layout em grid */
   display: grid;
+
+  /* Tamanho */
   width: 44px;
   height: 44px;
+
+  /* Centraliza conteúdo */
   place-items: center;
+
+  /* Borda roxa */
   border: 3px solid var(--purple);
+
+  /* Bordas arredondadas */
   border-radius: 18px 18px 24px 24px;
+
+  /* Cor do ícone */
   color: var(--blue);
+
+  /* Tamanho do ícone */
   font-size: 27px;
+
+  /* Sombra brilhante */
   box-shadow: 0 0 28px rgba(134, 93, 255, 0.22);
 }
 
+/* 
+  Remove margens padrão.
+*/
 .brand h1,
 .panel h2,
 .feature-strip h3,
@@ -110,16 +237,28 @@ footer {
   margin: 0;
 }
 
+/* 
+  Título principal.
+*/
 .brand h1 {
+  /* Tamanho */
   font-size: 1.65rem;
+
+  /* Altura da linha */
   line-height: 1;
 }
 
+/* 
+  Texto roxo.
+*/
 .brand h1 span,
 .option-mark.purple {
   color: var(--purple);
 }
 
+/* 
+  Textos secundários.
+*/
 .brand p,
 .security-badge p,
 .strength-block p,
@@ -128,194 +267,347 @@ footer {
   color: var(--muted);
 }
 
+/* 
+  Parágrafo da marca.
+*/
 .brand p {
+  /* Distância do título */
   margin-top: 4px;
+
+  /* Fonte menor */
   font-size: 0.86rem;
 }
 
+/* 
+  Badge de segurança.
+*/
 .security-badge {
+  display: flex;
+
   gap: 14px;
+
   padding-right: 4px;
+
   font-size: 0.9rem;
 }
 
+/* 
+  Escudo pequeno.
+*/
 .mini-shield {
   display: grid;
+
   width: 32px;
   height: 32px;
+
   place-items: center;
+
   color: var(--green);
+
   font-size: 28px;
 }
 
+/* 
+  Textos verdes de segurança.
+*/
 .security-badge strong span,
 #strengthLabel,
 .result-message strong {
   color: var(--green);
 }
 
+/* 
+  Grid principal da aplicação.
+*/
 .app-grid {
   display: grid;
+
+  /* Coluna esquerda fixa e direita flexível */
   grid-template-columns: 390px 1fr;
+
   align-items: start;
+
   gap: 16px;
+
   min-height: 0;
 }
 
+/* 
+  Painéis principais.
+*/
 .panel,
 .feature-strip {
+  /* Borda */
   border: 1px solid var(--line);
+
+  /* Fundo gradiente */
   background: linear-gradient(
     145deg,
     rgba(15, 24, 43, 0.92),
     rgba(8, 13, 25, 0.92)
   );
+
+  /* Sombra */
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
 }
 
+/* 
+  Painel padrão.
+*/
 .panel {
   border-radius: 12px;
+
   padding: 16px 18px;
 }
 
+/* 
+  Títulos dos painéis.
+*/
 .settings-panel h2,
 .tips-panel h2 {
   font-size: 1.05rem;
+
   margin-bottom: 12px;
 }
 
+/* 
+  Ícones de seção.
+*/
 .section-icon {
   display: inline-block;
+
   width: 20px;
   height: 20px;
+
   color: var(--purple);
+
   margin-right: 10px;
+
   vertical-align: -5px;
 }
 
+/* 
+  Containers alinhados.
+*/
 .range-head,
 .range-limits,
 .strength-head,
 .panel-head {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 16px;
 }
 
+/* 
+  Labels em destaque.
+*/
 .range-head label,
 .strength-head span {
   font-weight: 600;
 }
 
+/* 
+  Caixa que mostra valor do range.
+*/
 .range-head output {
   min-width: 56px;
+
   padding: 7px 10px;
+
   text-align: center;
+
   border: 1px solid var(--line-strong);
+
   border-radius: 8px;
+
   background: rgba(10, 16, 30, 0.8);
+
   font-size: 0.95rem;
+
   font-weight: 700;
 }
 
+/* 
+  Barra range personalizada.
+*/
 .range {
   width: 100%;
+
   height: 5px;
+
   margin: 10px 0 4px;
+
   appearance: none;
+
   border-radius: 999px;
+
+  /* Fundo progressivo */
   background: linear-gradient(
     90deg,
     var(--purple) var(--range-progress, 26.67%),
     #1d2638 var(--range-progress, 26.67%)
   );
+
   outline: none;
 }
 
+/* 
+  Bolinha do range no Chrome.
+*/
 .range::-webkit-slider-thumb {
   width: 20px;
   height: 20px;
+
   appearance: none;
+
   border: 3px solid #fff;
+
   border-radius: 50%;
+
   background: var(--purple);
+
   box-shadow: 0 0 0 4px rgba(134, 93, 255, 0.18);
+
   cursor: pointer;
 }
 
+/* 
+  Bolinha do range no Firefox.
+*/
 .range::-moz-range-thumb {
   width: 16px;
   height: 16px;
+
   border: 3px solid #fff;
+
   border-radius: 50%;
+
   background: var(--purple);
+
   cursor: pointer;
 }
 
+/* 
+  Texto mínimo e máximo do range.
+*/
 .range-limits {
   margin-bottom: 8px;
+
   color: var(--muted);
 }
 
+/* 
+  Campo de prefixo.
+*/
 .prefix-field {
   display: grid;
+
   gap: 5px;
+
   margin-bottom: 8px;
 }
 
+/* 
+  Label do prefixo.
+*/
 .prefix-field label {
   font-weight: 600;
 }
 
+/* 
+  Input do prefixo.
+*/
 .prefix-field input {
   width: 100%;
+
   min-height: 34px;
+
   padding: 0 12px;
+
   border: 1px solid var(--line);
+
   border-radius: 8px;
+
   color: var(--text);
+
   background: rgba(10, 16, 30, 0.8);
+
   outline: none;
+
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
 
+/* 
+  Efeito focus do input.
+*/
 .prefix-field input:focus {
   border-color: rgba(134, 93, 255, 0.72);
+
   box-shadow: 0 0 0 4px rgba(134, 93, 255, 0.16);
 }
 
+/* 
+  Placeholder e small escondidos.
+*/
 .prefix-field input::placeholder,
 .prefix-field small {
   display: none;
+
   color: var(--muted);
 }
 
+/* 
+  Lista de opções.
+*/
 .options {
   display: grid;
+
   gap: 6px;
 }
 
+/* 
+  Linha de opção.
+*/
 .option-row {
   display: grid;
+
   grid-template-columns: 34px 1fr auto;
+
   align-items: center;
+
   gap: 10px;
+
   min-height: 36px;
+
   padding: 6px 10px;
+
   border: 1px solid var(--line);
+
   border-radius: 8px;
+
   background: rgba(18, 28, 49, 0.74);
+
   cursor: pointer;
 }
 
+/* 
+  Marca da opção.
+*/
 .option-mark {
   font-size: 1rem;
+
   font-weight: 800;
 }
 
+/* 
+  Cores das opções.
+*/
 .option-mark.blue,
 .feature-icon.blue {
   color: var(--blue);
@@ -331,282 +623,515 @@ footer {
   color: var(--amber);
 }
 
+/* 
+  Toggle personalizado.
+*/
 .toggle {
   position: relative;
+
   width: 38px;
+
   height: 20px;
+
   appearance: none;
+
   border-radius: 999px;
+
   background: #273145;
+
   cursor: pointer;
+
   transition: 0.2s ease;
 }
 
+/* 
+  Bolinha do toggle.
+*/
 .toggle::after {
   content: "";
+
   position: absolute;
+
   top: 3px;
   left: 3px;
+
   width: 14px;
   height: 14px;
+
   border-radius: 50%;
+
   background: #fff;
+
   transition: 0.2s ease;
 }
 
+/* 
+  Toggle ativado.
+*/
 .toggle:checked {
   background: linear-gradient(135deg, #6d44f5, #8b6bff);
 }
 
+/* 
+  Move a bolinha quando ativo.
+*/
 .toggle:checked::after {
   transform: translateX(18px);
 }
 
+/* 
+  Área de força da senha.
+*/
 .strength-block {
   margin-top: 10px;
 }
 
+/* 
+  Medidor visual da força.
+*/
 .strength-meter {
   display: grid;
+
   grid-template-columns: repeat(5, 1fr);
+
   gap: 3px;
+
   margin: 8px 0;
 }
 
+/* 
+  Barras do medidor.
+*/
 .strength-meter span {
   height: 5px;
+
   border-radius: 999px;
+
   background: #253044;
 }
 
+/* 
+  Barra ativa.
+*/
 .strength-meter span.active {
   background: var(--green);
 }
 
+/* 
+  Texto da força escondido.
+*/
 .strength-block p {
   display: none;
+
   margin: 0 0 12px;
 }
 
+/* 
+  Botão principal.
+*/
 .primary-button {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   gap: 12px;
+
   width: 100%;
+
   min-height: 40px;
+
   border: 0;
+
   border-radius: 8px;
+
   color: #fff;
+
   background: linear-gradient(135deg, #7d42ff, #613cf2);
+
   font-weight: 800;
+
   cursor: pointer;
+
   box-shadow: 0 16px 30px rgba(108, 67, 255, 0.26);
 }
 
+/* 
+  Ícones do botão.
+*/
 .primary-button svg,
 .primary-button span[aria-hidden="true"] {
   font-size: 1.25rem;
 }
 
+/* 
+  Hover dos botões.
+*/
 .primary-button:hover,
 .ghost-button:hover {
   filter: brightness(1.1);
 }
 
+/* 
+  Stack principal.
+*/
 .main-stack {
   display: grid;
+
   align-content: start;
+
   gap: 14px;
+
   min-height: 0;
 }
 
+/* 
+  Painel da senha.
+*/
 .password-panel {
   padding-bottom: 16px;
 }
 
+/* 
+  Cabeçalho do painel.
+*/
 .panel-head {
   margin-bottom: 14px;
 }
 
+/* 
+  Título do painel.
+*/
 .panel-head h2 {
   font-size: 1.2rem;
 }
 
+/* 
+  Área de ações.
+*/
 .actions {
   gap: 12px;
 }
 
+/* 
+  Botão secundário transparente.
+*/
 .ghost-button {
   display: inline-flex;
+
   align-items: center;
+
   gap: 6px;
+
   border: 0;
+
   color: #dfe6f5;
+
   background: transparent;
+
   cursor: pointer;
 }
 
+/* 
+  Ícone do botão.
+*/
 .button-icon {
   color: var(--blue);
+
   font-size: 1.25rem;
 }
 
+/* 
+  Caixa da senha.
+*/
 .password-box {
   display: grid;
+
   place-items: center;
+
   min-height: 112px;
+
   padding: 16px;
+
   border: 1px solid var(--line-strong);
+
   border-radius: 10px;
+
   background: rgba(5, 10, 20, 0.68);
+
   overflow-wrap: anywhere;
 }
 
+/* 
+  Texto da senha gerada.
+*/
 #passwordOutput {
   margin: 0 0 14px;
+
   text-align: center;
+
   font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+
   line-height: 1.2;
+
   letter-spacing: 0;
+
   font-weight: 800;
 }
 
+/* 
+  Linha decorativa.
+*/
 .password-line {
   width: min(260px, 70%);
+
   height: 4px;
+
   border-radius: 999px;
+
   background: #263249;
 }
 
+/* 
+  Barra interna decorativa.
+*/
 .password-line span {
   display: block;
+
   width: 78%;
+
   height: 100%;
+
   border-radius: inherit;
+
   background: linear-gradient(90deg, var(--purple), var(--blue));
 }
 
+/* 
+  Mensagem de resultado.
+*/
 .result-message {
   justify-content: center;
+
   gap: 12px;
+
   padding-top: 14px;
 }
 
+/* 
+  Ícone do resultado.
+*/
 .result-icon {
   display: grid;
+
   width: 42px;
   height: 42px;
+
   place-items: center;
+
   border-radius: 50%;
+
   color: var(--green);
+
   border: 2px solid rgba(53, 229, 143, 0.7);
+
   background: rgba(91, 105, 133, 0.2);
+
   font-size: 1.25rem;
+
   font-weight: 800;
 }
 
+/* 
+  Textos da mensagem.
+*/
 .result-message p,
 .result-message span {
   margin: 0;
+
   font-size: 0.88rem;
 }
 
+/* 
+  Texto secundário da mensagem.
+*/
 .result-message span {
   display: block;
+
   margin-top: 4px;
+
   color: #cfd5e3;
 }
 
+/* 
+  Lista de dicas.
+*/
 .tips-panel ul {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 10px 24px;
+
   padding: 0;
+
   margin: 0;
+
   list-style: none;
 }
 
+/* 
+  Item da dica.
+*/
 .tips-panel li {
   position: relative;
+
   padding-left: 28px;
+
   font-size: 0.86rem;
 }
 
+/* 
+  Bolinha da lista.
+*/
 .tips-panel li::before {
   content: "";
+
   position: absolute;
+
   left: 0;
   top: -2px;
+
   width: 18px;
   height: 18px;
+
   border: 2px solid var(--purple);
+
   border-radius: 50%;
 }
 
+/* 
+  Check da lista.
+*/
 .tips-panel li::after {
   content: "";
+
   position: absolute;
+
   left: 7px;
   top: 3px;
+
   width: 5px;
   height: 10px;
+
   border: solid var(--purple);
+
   border-width: 0 2px 2px 0;
+
   transform: rotate(45deg);
 }
 
+/* 
+  Área de features.
+*/
 .feature-strip {
   display: none;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 24px;
+
   margin-top: 24px;
+
   padding: 24px 28px;
+
   border-radius: 12px;
 }
 
+/* 
+  Artigo da feature.
+*/
 .feature-strip article {
   align-items: flex-start;
+
   gap: 16px;
 }
 
+/* 
+  Ícone das features.
+*/
 .feature-icon {
   display: grid;
+
   place-items: center;
+
   min-width: 48px;
+
   font-size: 2.2rem;
+
   line-height: 1;
 }
 
+/* 
+  Feature roxa.
+*/
 .feature-icon.purple {
   color: var(--purple);
 }
 
+/* 
+  Título da feature.
+*/
 .feature-strip h3 {
   margin-bottom: 8px;
+
   font-size: 1rem;
 }
 
+/* 
+  Texto da feature.
+*/
 .feature-strip p {
   line-height: 1.48;
+
   font-size: 0.94rem;
 }
 
+/* 
+  Footer escondido.
+*/
 footer {
   display: none;
+
   padding-top: 0;
+
   text-align: center;
+
   letter-spacing: 0;
 }
 
+/* 
+  Classe usada ao copiar senha.
+*/
 .copied {
   color: var(--green);
 }
 
+/* 
+  Media query para telas menores que 980px.
+*/
 @media (max-width: 980px) {
+  /* Container com scroll */
   .container {
-    overflow-y: auto; /* scroll vertical */
+    overflow-y: auto;
   }
+
+  /* 
+    Todo o restante abaixo adapta layout,
+    tamanhos e espaçamentos para tablet/mobile.
+  */
+
   .page-shell {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -643,384 +1168,39 @@ footer {
     border-radius: 14px 14px 18px 18px;
     font-size: 23px;
   }
-
-  .brand h1 {
-    font-size: 1.38rem;
-  }
-
-  .brand p {
-    margin-top: 3px;
-    font-size: 0.78rem;
-  }
-
-  .panel {
-    padding: 11px 12px;
-  }
-
-  .settings-panel h2,
-  .tips-panel h2 {
-    font-size: 1rem;
-    margin-bottom: 9px;
-  }
-
-  .section-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-  }
-
-  .range-head output {
-    min-width: 50px;
-    padding: 6px 9px;
-    font-size: 0.9rem;
-  }
-
-  .range {
-    margin: 8px 0 3px;
-  }
-
-  .range-limits {
-    margin-bottom: 6px;
-    font-size: 0.82rem;
-  }
-
-  .prefix-field {
-    gap: 5px;
-    margin-bottom: 7px;
-  }
-
-  .prefix-field label,
-  .range-head label,
-  .strength-head span,
-  .strength-head strong {
-    font-size: 0.86rem;
-  }
-
-  .prefix-field input {
-    min-height: 34px;
-    padding: 0 10px;
-    font-size: 0.86rem;
-  }
-
-  .prefix-field small,
-  .strength-block p {
-    display: none;
-  }
-
-  .options {
-    grid-template-columns: 1fr;
-    gap: 5px;
-  }
-
-  .option-row {
-    grid-template-columns: 30px 1fr auto;
-    min-height: 34px;
-    padding: 5px 9px;
-    font-size: 0.78rem;
-  }
-
-  .option-mark {
-    font-size: 0.92rem;
-  }
-
-  .toggle {
-    width: 38px;
-    height: 20px;
-  }
-
-  .toggle::after {
-    width: 14px;
-    height: 14px;
-  }
-
-  .toggle:checked::after {
-    transform: translateX(18px);
-  }
-
-  .strength-block {
-    margin-top: 8px;
-  }
-
-  .strength-meter {
-    margin: 7px 0 10px;
-  }
-
-  .strength-meter span {
-    height: 5px;
-  }
-
-  .primary-button {
-    min-height: 38px;
-    font-size: 0.9rem;
-  }
-
-  .password-panel {
-    padding-bottom: 11px;
-  }
-
-  .panel-head {
-    margin-bottom: 9px;
-  }
-
-  .panel-head h2 {
-    font-size: 1.05rem;
-  }
-
-  .ghost-button {
-    gap: 6px;
-    font-size: 0.86rem;
-  }
-
-  .button-icon {
-    font-size: 1.25rem;
-  }
-
-  .password-box {
-    min-height: 98px;
-    padding: 12px 10px;
-  }
-
-  #passwordOutput {
-    margin-bottom: 10px;
-    font-size: clamp(1.08rem, 3vw, 1.58rem);
-  }
-
-  .result-message {
-    gap: 10px;
-    padding-top: 10px;
-  }
-
-  .result-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1.08rem;
-  }
-
-  .result-message p,
-  .result-message span {
-    font-size: 0.8rem;
-  }
-
-  .result-message span {
-    margin-top: 4px;
-  }
-
-  .tips-panel {
-    display: none;
-  }
-
-  .feature-strip {
-    display: none;
-  }
 }
-@media (max-width: 1024px) {
-  .page-shell {
-    width: min(100% - 20px, 900px);
-    min-height: 100vh;
-    padding-top: 12px;
-  }
 
+/* 
+  Media query para telas até 1024px.
+*/
+@media (max-width: 1024px) {
+  /* Layout vira coluna única */
   .app-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
-    overflow-y: auto;
   }
 
-  .main-stack {
-    gap: 12px;
-  }
-
+  /* Hero fica empilhado */
   .hero {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
   }
 
+  /* Esconde badge */
   .security-badge {
-    display: none;
-  }
-
-  .brand {
-    align-items: center;
-    gap: 10px;
-  }
-
-  .brand-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 25px;
-  }
-
-  .brand h1 {
-    font-size: 1.45rem;
-  }
-
-  .brand p {
-    margin-top: 2px;
-    font-size: 0.82rem;
-  }
-
-  .panel {
-    padding: 14px;
-  }
-
-  .settings-panel h2,
-  .tips-panel h2,
-  .panel-head h2 {
-    font-size: 1rem;
-  }
-
-  .section-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 8px;
-  }
-
-  .range-head label,
-  .strength-head span,
-  .strength-head strong {
-    font-size: 0.9rem;
-  }
-
-  .range-head output {
-    min-width: 50px;
-    padding: 6px 9px;
-    font-size: 0.9rem;
-  }
-
-  .range {
-    margin: 8px 0 4px;
-  }
-
-  .range-limits {
-    font-size: 0.8rem;
-  }
-
-  .prefix-field {
-    margin-bottom: 8px;
-  }
-
-  .prefix-field input {
-    min-height: 36px;
-    padding: 0 10px;
-    font-size: 0.9rem;
-  }
-
-  .options {
-    gap: 6px;
-  }
-
-  .option-row {
-    grid-template-columns: 30px 1fr auto;
-    min-height: 36px;
-    padding: 6px 10px;
-    font-size: 0.84rem;
-  }
-
-  .option-mark {
-    font-size: 0.92rem;
-  }
-
-  .toggle {
-    width: 38px;
-    height: 20px;
-  }
-
-  .toggle::after {
-    width: 14px;
-    height: 14px;
-  }
-
-  .toggle:checked::after {
-    transform: translateX(18px);
-  }
-
-  .strength-block {
-    margin-top: 8px;
-  }
-
-  .strength-meter {
-    margin: 7px 0 10px;
-  }
-
-  .strength-meter span {
-    height: 5px;
-  }
-
-  .primary-button {
-    min-height: 40px;
-    font-size: 0.9rem;
-  }
-
-  .password-panel {
-    padding-bottom: 12px;
-  }
-
-  .panel-head {
-    margin-bottom: 10px;
-  }
-
-  .actions {
-    gap: 8px;
-  }
-
-  .ghost-button {
-    gap: 6px;
-    font-size: 0.86rem;
-  }
-
-  .button-icon {
-    font-size: 1.2rem;
-  }
-
-  .password-box {
-    min-height: 100px;
-    padding: 14px;
-  }
-
-  #passwordOutput {
-    margin-bottom: 10px;
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
-  }
-
-  .result-message {
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 10px;
-    padding-top: 10px;
-  }
-
-  .result-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
-
-  .result-message p,
-  .result-message span {
-    font-size: 0.82rem;
-  }
-
-  .tips-panel {
-    display: none;
-  }
-
-  .tips-panel ul,
-  .feature-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-strip {
     display: none;
   }
 }
 
+/* 
+  Media query para celulares.
+*/
 @media (max-width: 640px) {
+  /* Ativa scroll vertical */
   body {
     overflow-y: auto;
   }
 
+  /* Layout mais compacto */
   .page-shell {
     height: auto;
     min-height: 100vh;
@@ -1029,41 +1209,50 @@ footer {
     padding-top: 10px;
   }
 
+  /* Ícone menor */
   .brand-icon {
     width: 40px;
     height: 40px;
     font-size: 24px;
   }
 
+  /* Título menor */
   .brand h1 {
     font-size: 1.3rem;
   }
 
+  /* Texto menor */
   .brand p {
     font-size: 0.78rem;
   }
 
+  /* Painel compacto */
   .panel {
     padding: 12px;
   }
 
+  /* Fonte menor */
   .option-row {
     font-size: 0.8rem;
   }
 
+  /* Senha menor */
   #passwordOutput {
     font-size: 1.15rem;
   }
 
+  /* Botão compacto */
   .primary-button {
     min-height: 38px;
     font-size: 0.85rem;
   }
 
+  /* Espaçamento reduzido */
   .result-message {
     gap: 8px;
   }
 
+  /* Ícone menor */
   .result-icon {
     width: 34px;
     height: 34px;

@@ -11,7 +11,7 @@
   },
   "build": {
     "appId": "com.passwordgenerator.app",
-    "productName": "Password Generator",
+    "productName": "Gerador de Senhas",
     "directories": {
       "output": "dist"
     },
@@ -34,7 +34,7 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Password Generator"
+      "shortcutName": "Gerador de Senhas"
     }
   },
   "devDependencies": {
