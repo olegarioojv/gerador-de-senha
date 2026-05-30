@@ -33,11 +33,7 @@ Isso instalará as dependências do Electron e do Electron Builder.
 
 ## Captura de tela
 
-Adicione uma imagem do aplicativo na mesma pasta do `README.md` e use o código abaixo para exibir no GitHub:
-
 ![Screenshot do Gerador de Senhas](Screenshot.png)
-
-> Se você salvar a imagem em outra pasta, ajuste o caminho relativo. Por exemplo, `assets/screenshot.png`.
 
 ## Executar em modo de desenvolvimento
 
