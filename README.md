@@ -34,7 +34,7 @@ Isso instalará as dependências do Electron e do Electron Builder.
 ## Captura de tela
 
 ```markdown
-![Screenshot do Gerador de Senhas](./Screenshot.png)
+![Screenshot do Gerador de Senhas](/Screenshot.png)
 ```
 
 ## Executar em modo de desenvolvimento
